@@ -1,43 +1,24 @@
-githubUserSearch.controller('GitUserSearchController', ['$resource',function($resource) {
+githubUserSearch.controller('GitUserSearchController', ['$resource','Search',function($resource, Search) {
 
-  var searchResource = $resource('https://api.github.com/search/users?access_token=' + access_token);
-  // var searchResource = $resource('https://api.github.com/search/users');
-  var self = this;
-
-  // self.searchResult = {
-  //   "items": [
-  //     {
-  //       "login": "tansaku",
-  //       "avatar_url": "https://avatars.githubusercontent.com/u/30216?v=3",
-  //       "html_url": "https://github.com/tansaku"
-  //     },
-  //     {
-  //       "login": "stephenlloyd",
-  //       "avatar_url": "https://avatars.githubusercontent.com/u/196474?v=3",
-  //       "html_url": "https://github.com/stephenlloyd"
-  //     }
-  //   ]
+  // var searchResource = $resource('https://api.github.com/search/users?access_token=' + access_token);
+  // var self = this;
+  //
+  // self.doSearch = function() {
+  //   self.searchResult = searchResource.get(
+  //     { q: self.searchTerm }
+  //   );
   // };
 
-  self.doSearch = function() {
-    self.searchResult = searchResource.get(
-      { q: self.searchTerm }
-    );
+  var self = this;
 
-    // self.searchResult = {
-    //   items: [
-    //     {
-    //       "login": "tansaku",
-    //       "avatar_url": "https://avatars.githubusercontent.com/u/30216?v=3",
-    //       "html_url": "https://github.com/tansaku"
-    //     },
-    //     {
-    //       "login": "stephenlloyd",
-    //       "avatar_url": "https://avatars.githubusercontent.com/u/196474?v=3",
-    //       "html_url": "https://github.com/stephenlloyd"
-    //     }
-    //   ]
-    // };
+  // var searchFact = $factory('Search');
+
+  self.doSearch = function() {
+    Search.query(self.searchTerm)
+      .then(function(response) {
+        self.searchResult = response.data;
+      })
   };
+
 
 }]);
