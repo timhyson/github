@@ -42,16 +42,6 @@ describe('GitUserSearchController', function() {
       httpBackend.verifyNoOutstandingRequest();
      });
 
-    // var httpBackend;
-    // beforeEach(inject(function($httpBackend) {
-    //   httpBackend = $httpBackend;
-    //   httpBackend
-    //     .when("GET", apiUrl)
-    //     .respond(
-    //       { items: items }
-    //     );
-    // }));
-
     it('displays search results', function() {
       ctrl.searchTerm = 'hello';
       ctrl.doSearch();

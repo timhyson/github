@@ -20,9 +20,6 @@ module.exports = function(config) {
       'bower_components/angular-resource/angular-resource.js',
       'bower_components/angular-mocks/angular-mocks.js',
       'secrets.js',
-      // 'js/app.js',
-      // 'js/searchFactory.js',
-      // 'js/gitUserSearchController.js',
       'js/**/*.js',
       'test/**/*.spec.js'
     ],

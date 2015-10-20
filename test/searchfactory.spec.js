@@ -1,6 +1,7 @@
 describe('factory: Search', function() {
 
   var search;
+  var httpBackend;
 
   beforeEach(module('GitUserSearch'));
 
@@ -9,9 +10,10 @@ describe('factory: Search', function() {
   }));
 
   beforeEach(inject(function($httpBackend) {
+      var stubbedURL = 'https://api.github.com/search/users?access_token=' + access_token + '&q=hello';
       httpBackend = $httpBackend
       httpBackend
-        .when("GET", "https://api.github.com/search/users?q=hello")
+        .when("GET", stubbedURL)
         .respond(
           { items: items }
         );
@@ -29,10 +31,6 @@ describe('factory: Search', function() {
       "html_url": "https://github.com/stephenlloyd"
     }
   ];
-
-  it('responds to query', function() {
-    expect(search.query).toBeDefined();
-  });
 
   it('returns search results', function() {
     search.query('hello')
