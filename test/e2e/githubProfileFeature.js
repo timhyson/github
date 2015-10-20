@@ -24,11 +24,37 @@ describe('GitHub profile finder', function() {
     expect(profiles.get(1).getText()).toEqual('spike01');
   });
 
-  it('finds the last Spike', function() { //this is a silly test, but roll with it
+  it('finds the last Spike', function() {
     searchBox.sendKeys('spike');
     searchButton.click();
-    var profiles = element.all(by.repeater('user in searchResult.items'));
-    expect(profiles.last().getText()).toEqual('spike01'); //This is, again, wrong.
+    var profiles = element.all(by.repeater('user in searchCtrl.searchResult.items'));
+    expect(profiles.last().getText()).toEqual('spikelynch');
   });
+
+  // it('finds our Spike', function() {
+  //   var userNames = [];
+  //   var hasSpike = false;
+  //   searchBox.sendKeys('spike');
+  //   searchButton.click();
+  //   var profiles = element.all(by.repeater('user in searchCtrl.searchResult.items'));
+  //   // userNames.push(profiles.get(1).getText())
+  //   // console.log(userNames)
+  //   console.log(profiles.last())
+  //   // console.log("=============================================================");
+  //   // console.log(profiles[1]);
+  //   // console.log("=============================================================");
+  //   for (i = 0; i < 5; i++) {
+  //     // userNames.push(profiles.get(i).getText());
+  //     if (profiles.get(i).getText() === 'spike01') {
+  //       // console.log("=============================================================");
+  //       // console.log(profiles.get(i).getText());
+  //       // console.log("=============================================================");
+  //       // expect(profiles.get(i).getText()).toEqual('spike01');
+  //       hasSpike = true;
+  //     };
+  //   };
+  //
+  //   expect(hasSpike).toEqual(true);
+  // });
 
 });
