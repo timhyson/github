@@ -39,7 +39,7 @@ describe('GitHub profile finder', function() {
   //   var profiles = element.all(by.repeater('user in searchCtrl.searchResult.items'));
   //   // userNames.push(profiles.get(1).getText())
   //   // console.log(userNames)
-  //   console.log(profiles.last())
+  //   // console.log(profiles.last())
   //   // console.log("=============================================================");
   //   // console.log(profiles[1]);
   //   // console.log("=============================================================");
@@ -49,7 +49,7 @@ describe('GitHub profile finder', function() {
   //       // console.log("=============================================================");
   //       // console.log(profiles.get(i).getText());
   //       // console.log("=============================================================");
-  //       // expect(profiles.get(i).getText()).toEqual('spike01');
+  //       expect(profiles.get(i).getText()).toEqual('spike01');
   //       hasSpike = true;
   //     };
   //   };
