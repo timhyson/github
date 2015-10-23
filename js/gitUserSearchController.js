@@ -1,4 +1,4 @@
-githubUserSearch.controller('GitUserSearchController', ['$resource','Search',function($resource, Search) {
+githubUserSearch.controller('GitUserSearchController', ['$resource', 'Search', function($resource, Search) {
   var self = this;
   self.doSearch = function() {
     Search.query(self.searchTerm)

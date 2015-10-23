@@ -1,6 +1,5 @@
 describe('GitUserSearchController', function() {
   beforeEach(module('GitUserSearch'));
-
   var ctrl;
 
   beforeEach(inject(function($controller) {
@@ -8,7 +7,7 @@ describe('GitUserSearchController', function() {
   }));
 
   it('initialises with an empty search result and term', function() {
-    expect(ctrl.searchResult).toBeUndefined();
+  expect(ctrl.searchResult).toBeUndefined();
     expect(ctrl.searchTerm).toBeUndefined();
   });
 
@@ -40,7 +39,7 @@ describe('GitUserSearchController', function() {
     afterEach(function() {
       httpBackend.verifyNoOutstandingExpectation();
       httpBackend.verifyNoOutstandingRequest();
-     });
+    });
 
     it('displays search results', function() {
       ctrl.searchTerm = 'hello';
